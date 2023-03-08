@@ -16,19 +16,25 @@ class NewsApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-            // ignore: deprecated_member_use
-            backwardsCompatibility: false,
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: Colors.white,
-              statusBarIconBrightness: Brightness.dark,
-            ),
-           titleTextStyle: TextStyle(color: Colors.black),
-            elevation: 0.0,
-            backgroundColor: Colors.white),
+          actionsIconTheme: IconThemeData(color: Colors.black, size: 25),
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarIconBrightness: Brightness.dark,
+          ),
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+          elevation: 0.0,
+          backgroundColor: Colors.white,
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: Color.fromRGBO(255, 167, 38, 1),
+          elevation: 1.0,
+        ),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
-
-
