@@ -16,8 +16,11 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           var cubit = NewsCubit.get(context);
           return Scaffold(
-            appBar: AppBar(
-              title: Text('News App' ),
+            appBar:  AppBar(
+              title:const Text('News App' ),
+              actions: [
+                IconButton(onPressed: (){}, icon: const Icon(Icons.search))
+              ],
             ),
             body: cubit.screens[cubit.currentIndex],
             bottomNavigationBar: BottomNavigationBar(
