@@ -14,6 +14,7 @@ class NewsApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           actionsIconTheme: IconThemeData(color: Colors.black, size: 25),
@@ -33,7 +34,9 @@ class NewsApp extends StatelessWidget {
           selectedItemColor: Color.fromRGBO(255, 167, 38, 1),
           elevation: 1.0,
         ),
+        
       ),
+     
       home: const HomePage(),
     );
   }

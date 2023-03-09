@@ -38,4 +38,5 @@ class NewsCubit extends Cubit<NewsState> {
     currentIndex = index;
     emit(NewsNavBottom());
   }
+
 }
