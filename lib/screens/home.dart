@@ -1,9 +1,15 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/cubit/news_cubit.dart';
+import 'package:news_app/services/api_service.dart';
+import 'package:http/http.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +22,20 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           var cubit = NewsCubit.get(context);
           return Scaffold(
-            appBar:  AppBar(
-              title:const Text('News App' ),
+            appBar: AppBar(
+              title: const Text('News App'),
               actions: [
-                IconButton(onPressed: (){}, icon: const Icon(Icons.search))
+                IconButton(onPressed: () {}, icon: const Icon(Icons.search))
               ],
             ),
             body: cubit.screens[cubit.currentIndex],
+        
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: cubit.currentIndex,
               onTap: (index) {
                 cubit.changeScreen(index);
               },
-              items:cubit.bottomNav,
+              items: cubit.bottomNav,
             ),
           );
         },

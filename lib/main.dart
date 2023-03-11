@@ -3,11 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:news_app/screens/home.dart';
 
 void main() {
-  runApp(const NewsApp());
+  runApp(const NewsApp(
+
+  ));
 }
 
 class NewsApp extends StatelessWidget {
-  const NewsApp({super.key});
+  const NewsApp({super.key, });
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,9 @@ class NewsApp extends StatelessWidget {
         
       ),
      
-      home: const HomePage(),
+      home: const HomePage(
+        
+      ),
     );
   }
 }
